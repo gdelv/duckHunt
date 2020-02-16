@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.emoji {
+    display: inline-block;
+    font-size: 10vmin;
+}
