@@ -4,9 +4,9 @@ Personal project to learn more about Express and bringing back Duck Hunt!
 
 [x] Initialized express server
 [x] Connected html file to server
-[ ] Create Background
-[ ] Create Scoreboard
-[ ] Create Duck Model
+[x] Create Background
+[x] Create Scoreboard
+[x] Create Duck Model
 [ ] Connect Socket to server
 [ ] Create gameState
 [ ] Create Game Logic
