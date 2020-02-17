@@ -7,7 +7,7 @@ Personal project to learn more about Express and bringing back Duck Hunt!
 [x] Create Background <br>
 [x] Create Scoreboard <br>
 [x] Create Duck Model <br>
-[ ] Connect Socket to server  <br>
+[x] Connect Socket to server  <br>
 [ ] Create gameState <br>
 [ ] Create Game Logic <br>
 
