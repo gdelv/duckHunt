@@ -7,14 +7,21 @@
 .emoji {
     display: inline-block;
     font-size: 6vmin;
-    position: relative;
+    position: fixed;
     z-index: 2;
+    cursor: pointer;
 }
 
 body {
     min-width: 100%;
     min-height: max-content;
     border:  2px solid red;
+}
+.zoo {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
 }
 .zoo img {
     display: inline-block;
