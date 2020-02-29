@@ -1,4 +1,5 @@
 const zoo = document.querySelector('.zoo');
+const scoreElement = document.querySelector('.score .value')
 const socket = io();
 
 const ducksById = {};
@@ -9,12 +10,14 @@ const collectDuck = (duck) => {
             id: duck.id,
         });
         if (ducksById[duck.id]) {
-            ducksById[duck.id].remove()
+            ducksById[duck.id].remove();
+            delete ducksById[duck.id];
         }
     }
 }
 
 const updateView = (gameState) => {
+    scoreElement.textContent = gameState.ducksCollected;
     gameState.ducks.forEach((duck) => {
         if(!ducksById[duck.id]) {
             const duckElement = document.createElement('span')

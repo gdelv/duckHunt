@@ -5,6 +5,7 @@ module.exports = (server) => {
     const io = SocketIO(server);
 
     const gameState = {
+        ducksCollected: 0,
         ducks: [{
             id: 0,
             emoji: "🦆",
@@ -49,7 +50,18 @@ module.exports = (server) => {
     };
 
     io.on('connection', (socket) => {
-        console.log('a user connected');
+        socket.on('collect-duck', ({ id }) => {
+            gameState.ducksCollected += 1;
+            gameState.ducks = gameState.ducks.filter(duck => duck.id !== id);
+            gameState.ducks.push({
+                id: gameState.ducks[gameState.ducks.length - 1].id + 1,
+                emoji: "🦆",
+                location: {
+                    x: Math.random(),
+                    y: Math.random(),
+                }
+            })
+        })
     });
 
     setInterval(() => {
