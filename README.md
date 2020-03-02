@@ -10,9 +10,10 @@ Personal project to learn more about Express and bringing back Duck Hunt!
 [x] Connect Socket to server  <br>
 [x] Create gameState <br>
 [x] Create Game Logic <br>
-[ ] Dynamic scoreboard <br>
+[x] Dynamic scoreboard <br>
 
 ### TODO (POST-MVP)
 
+[ ] High Score Functionality
 [ ] Add levels<br>
 [ ] Duck Wing Animation<br>

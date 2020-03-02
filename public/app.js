@@ -32,6 +32,6 @@ const updateView = (gameState) => {
         ducksById[duck.id].style.left = duck.location.x * window.innerWidth + 'px'
 
     })
-    // console.log(gameState)
+    console.log(gameState)
 }
 socket.on('game-state', updateView)

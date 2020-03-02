@@ -49,7 +49,9 @@ module.exports = (server) => {
     ]
     };
 
+    let hasUpdate = false;
     io.on('connection', (socket) => {
+        socket.emit('game-state', gameState);
         socket.on('collect-duck', ({ id }) => {
             gameState.ducksCollected += 1;
             gameState.ducks = gameState.ducks.filter(duck => duck.id !== id);
@@ -60,11 +62,15 @@ module.exports = (server) => {
                     x: Math.random(),
                     y: Math.random(),
                 }
-            })
-        })
+            });
+            hasUpdate = true;
+        });
     });
 
     setInterval(() => {
-        io.emit('game-state', gameState)
-    }, 1000)
+        if(hasUpdate) {
+            io.emit('game-state', gameState);
+            hasUpdate = false;
+        }
+    }, 300);
 }
